@@ -6,7 +6,7 @@ services:
     volumes:
       - /mnt/data/Audiobooks:/audiobooks
       - /mnt/data/Podcasts:/podcasts
-#      - </path/to/config>:/config
-#      - </path/to/metadata>:/metadata
+      - /var/lib/docker/volumes/audiobookshelf/config:/config
+      - /var/lib/docker/volumes/audiobookshelf/metadata:/metadata
     environment:
       - TZ=America/New_York
