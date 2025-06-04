@@ -4,8 +4,8 @@ services:
     ports:
       - 13378:80
     volumes:
-      - /mnt/data/Audiobooks:/audiobooks
-      - /mnt/data/Podcasts:/podcasts
+      - /mnt/data/Audiobooks:/mnt/audiobooks
+      - /mnt/data/Podcasts:/mnt/podcasts
       - /var/lib/docker/volumes/audiobookshelf/config:/config
       - /var/lib/docker/volumes/audiobookshelf/metadata:/metadata
     environment:
