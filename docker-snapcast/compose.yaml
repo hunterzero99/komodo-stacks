@@ -52,7 +52,7 @@ services:
   plexamp:
     container_name: plexamp
     privileged: true
-    image: ghcr.io/anatosun/plexamp:arm64v8
+    image: ghcr.io/anatosun/plexamp:amd64
     devices:
       - "/dev/snd:/dev/snd"
     volumes:
