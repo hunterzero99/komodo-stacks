@@ -9,7 +9,7 @@ services:
     environment:
       # See README.md for all environment options.
       TZ: "America/New_York"
-      NGINX_ENABLED: "1"  # enable NGINX for HTTPS -> requires to bind to port 443 by default
+      NGINX_ENABLED: "0"  # enable NGINX for HTTPS -> requires to bind to port 443 by default
       #NGINX_HTTPS_PORT: "4433"  # use port 4433 instead of 4433
     volumes:
       # Snapcast: Configuration and run-time data
