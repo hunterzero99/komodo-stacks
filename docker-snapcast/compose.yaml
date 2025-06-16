@@ -18,7 +18,7 @@ services:
       #- ./config_snapcast/:/app/config/
 
       # NGINX: HTTPS certificates
-      nginx-certs:/app/certs/
+      #nginx-certs:/app/certs/
       #- ./nginx_certs/:/app/certs/
 
     # Network Alternative 1: Use host networking
