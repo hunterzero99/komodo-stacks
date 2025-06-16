@@ -22,7 +22,7 @@ services:
       #- ./nginx_certs/:/app/certs/
 
     # Network Alternative 1: Use host networking
-    #network_mode: host
+    network_mode: host
     
     # Network Alternative 2: Bridge container directly into your home network
     #networks:
@@ -30,24 +30,24 @@ services:
         #ipv4_address: <desired-ip-of-container>
 
     # Network Alternative 3: Use port-forwarding of host ports (experimental, not recommended)
-    ports:
-       # Snapcast Ports
-       - '1704-1705:1704-1705'
-       - '1780:1780'
-       # AirPlay ports
-       - '3689:3689'
-       - '5000:5000'
-       - '6000-6009:6000-6009/udp'
-       # AirPlay-2 ports
-       - '319-320:319-320/udp'
-       - '3689:3689'
-       - '5000:5000'
-       - '7000:7000'
-       - '6000-6009:6000-6009/udp'
-       # Avahi ports
-       - '5353:5353'
-       # NGINX ports
-       - '443:443'
+    #ports:
+    #   # Snapcast Ports
+    #   - '1704-1705:1704-1705'
+    #   - '1780:1780'
+    #   # AirPlay ports
+    #   - '3689:3689'
+    #   - '5000:5000'
+    #   - '6000-6009:6000-6009/udp'
+    #   # AirPlay-2 ports
+    #   - '319-320:319-320/udp'
+    #   - '3689:3689'
+    #   - '5000:5000'
+    #   - '7000:7000'
+    #   - '6000-6009:6000-6009/udp'
+    #   # Avahi ports
+    #   - '5353:5353'
+    #   # NGINX ports
+    #   - '443:443'
     
   plexamp:
     container_name: plexamp
@@ -58,11 +58,12 @@ services:
     volumes:
       - ./config:/root/.local/share/Plexamp/Settings # replace that with the appropriate host binding
     environment:
-      - PLEXAMP_CLAIM_TOKEN=claim-XXXXXXXXXX # get your claim at https://www.plex.tv/claim/
+    #  - PLEXAMP_CLAIM_TOKEN=claim-XXXXXXXXXX # get your claim at https://www.plex.tv/claim/
       - PLEXAMP_PLAYER_NAME=docker # replace this with your player name
-    ports:
-      - 32500:32500
-      - 20000:20000
+    network_mode: host
+    #ports:
+    #  - 32500:32500
+    #  - 20000:20000
     restart: unless-stopped
 
 
