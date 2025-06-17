@@ -75,7 +75,7 @@ services:
       #- UMASK=002
     ports:
       - 8787:8787 #readarr
-   volumes:
+    volumes:
       - /opt/docker/servarr/readarr:/config
       - /mnt/data/Audiobooks:/media/audiobooks
       - /mnt/data/Books/:/media/ebooks
