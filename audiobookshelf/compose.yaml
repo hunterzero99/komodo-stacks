@@ -10,3 +10,4 @@ services:
       - /var/lib/docker/volumes/audiobookshelf/metadata:/metadata
     environment:
       - TZ=America/New_York
+    restart: "unless--stopped" # no | always | on-failure | unless--stopped
