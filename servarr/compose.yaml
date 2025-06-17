@@ -1,0 +1,109 @@
+version: "3.2"
+services:
+  prowlarr:
+    image: ghcr.io/linuxserver/prowlarr:develop
+    container_name: prowlarr
+    hostname: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+    ports:
+      - 9696:9696 #prowlarr
+    volumes:
+      - /opt/docker/servarr/prowlarr:/config
+    restart: "always" # no | always | on-failure | unless--stopped
+
+  sonarr:
+    image: ghcr.io/linuxserver/sonarr
+    container_name: sonarr
+    hostname: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+      #- UMASK=002
+    ports:
+      - 8989:8989 #sonarr
+    volumes:
+      - /opt/docker/servarr/sonarr:/config
+      - /mnt/data/Video/Television:/media/tv
+      - /opt/docker/servarr/_downloads:/media/_downloads # /mnt/usb_120gb/downloads | /opt/docker/htpc-tools/downloads
+    restart: "always" # no | always | on-failure | unless--stopped
+
+  radarr:
+    image: ghcr.io/linuxserver/radarr
+    container_name: radarr
+    hostname: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+      #- UMASK=002
+    ports:
+      - 7878:7878 #radarr
+    volumes:
+      - /opt/docker/servarr/radarr:/config
+      - /mnt/data/Video/Movies:/media/movies
+      - /opt/docker/servarr/_downloads:/media/_downloads # /mnt/usb_120gb/downloads | /opt/docker/htpc-tools/downloads
+    restart: "always" # no | always | on-failure | unless--stopped
+
+  lidarr:
+    image: ghcr.io/linuxserver/lidarr
+    container_name: lidarr
+    hostname: lidarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+      #- UMASK=002
+    ports:
+     - 8686:8686 #lidarr
+    volumes:
+     - /opt/docker/servarr/lidarr:/config
+     - /mnt/data/Video/Music:/media/music
+     - /opt/docker/servarr/_downloads:/media/_downloads # /mnt/usb_120gb/downloads | /opt/docker/htpc-tools/downloads
+    restart: "always" # no | always | on-failure | unless--stopped
+
+  readarr:
+    image: lscr.io/linuxserver/readarr:develop
+    container_name: readarr
+    hostname: readarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+      #- UMASK=002
+    ports:
+      - 8787:8787 #readarr
+   volumes:
+      - /opt/docker/servarr/readarr:/config
+      - /mnt/data/Audiobooks:/media/audiobooks
+      - /mnt/data/Books/:/media/ebooks
+      - /opt/docker/servarr/_downloads:/media/_downloads # /mnt/usb_120gb/downloads | /opt/docker/htpc-tools/downloads
+    restart: "always" # no | always | on-failure | unless--stopped
+
+  bazarr:
+    image: ghcr.io/linuxserver/bazarr
+    container_name: bazarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+      #- UMASK=002
+    ports:
+      - 6767:6767 #bazarr
+    volumes:
+      - /opt/docker/servarr/bazarr:/config
+      - /mnt/data/Video/Movies:/movies #optional
+      - /mnt/data/Video/Television:/tv #optional
+    restart: "always" # no | always | on-failure | unless--stopped
+
+#volumes:
+#  synology-tv:
+#    driver: local
+#    driver_opts:
+#      type: cifs
+#      o: username=servarr,password=cac3uXpC5WY8UTgiYQS2,uid=1031,gid=100,file_mode=0777,dir_mode=0777
+#      device: "//10.0.0.10/tv"
+
