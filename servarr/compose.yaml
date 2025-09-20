@@ -1,6 +1,6 @@
 services:
   prowlarr:
-    image: ghcr.io/linuxserver/prowlarr:develop
+    image: ghcr.io/linuxserver/prowlarr
     container_name: prowlarr
     hostname: prowlarr
     environment:
@@ -48,7 +48,7 @@ services:
     restart: "always" # no | always | on-failure | unless--stopped
 
   lidarr:
-    image: ghcr.io/linuxserver/lidarr
+    image: ghcr.io/linuxserver/lidarr:develop
     container_name: lidarr
     hostname: lidarr
     environment:
