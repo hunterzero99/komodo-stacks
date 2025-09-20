@@ -64,22 +64,22 @@ services:
      - /opt/docker/servarr/_downloads:/media/_downloads # /mnt/usb_120gb/downloads | /opt/docker/htpc-tools/downloads
     restart: "always" # no | always | on-failure | unless--stopped
 
-  readarr:
-    image: lscr.io/linuxserver/readarr:develop
-    container_name: readarr
-    hostname: readarr
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/New_York
-      #- UMASK=002
-    ports:
-      - 8787:8787 #readarr
-    volumes:
-      - /opt/docker/servarr/readarr:/config
-      - /mnt/data:/mnt
-      - /opt/docker/servarr/_downloads:/media/_downloads # /mnt/usb_120gb/downloads | /opt/docker/htpc-tools/downloads
-    restart: "always" # no | always | on-failure | unless--stopped
+#  readarr:
+#    image: lscr.io/linuxserver/readarr:develop
+#    container_name: readarr
+#    hostname: readarr
+#    environment:
+#      - PUID=1000
+#      - PGID=1000
+#      - TZ=America/New_York
+#      #- UMASK=002
+#    ports:
+#      - 8787:8787 #readarr
+#    volumes:
+#      - /opt/docker/servarr/readarr:/config
+#      - /mnt/data:/mnt
+#      - /opt/docker/servarr/_downloads:/media/_downloads # /mnt/usb_120gb/downloads | /opt/docker/htpc-tools/downloads
+#    restart: "always" # no | always | on-failure | unless--stopped
 
   bazarr:
     image: ghcr.io/linuxserver/bazarr
