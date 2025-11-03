@@ -18,7 +18,5 @@ services:
     user: "1000:1000"
     # remove the whole environment section if you don't need it
     environment:
-      - <ENV_VAR>=<extra configuration>
       - TZ=America/New_York
-      --mount type=bind,source=/mnt/data/komga/data,target=/data
     restart: unless-stopped
