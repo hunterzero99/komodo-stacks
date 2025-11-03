@@ -11,8 +11,6 @@ services:
       - type: bind
         source: /mnt/data/komga/data
         target: /data
-      - type: bind
-        read_only: true
     ports:
       - 25600:25600
     user: "1000:1000"
