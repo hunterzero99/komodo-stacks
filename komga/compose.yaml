@@ -1,13 +1,13 @@
 ---
-version: '3.3'
+version: latest
 services:
   komga:
     image: gotson/komga
     container_name: komga
     volumes:
-      - type: bind
-        source: /mnt/data/komga/config
-        target: /config
+#      - type: bind
+#        source: /mnt/data/komga/config
+#        target: /config
       - type: bind
         source: /mnt/data/komga/data
         target: /data
