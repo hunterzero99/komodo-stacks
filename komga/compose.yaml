@@ -5,9 +5,9 @@ services:
     image: gotson/komga
     container_name: komga
     volumes:
-#      - type: bind
-#        source: /mnt/data/komga/config
-#        target: /config
+      - type: bind
+        source: /home/crdaley/komga/config
+        target: /config
       - type: bind
         source: /mnt/data/komga/data
         target: /data
