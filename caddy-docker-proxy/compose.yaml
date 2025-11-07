@@ -9,6 +9,7 @@ services:
       - 25600:25600
     environment:
       - CADDY_INGRESS_NETWORKS=caddy
+      - CADDY_TLS_INTERNAL=true
     networks:
       - caddy
     volumes:
