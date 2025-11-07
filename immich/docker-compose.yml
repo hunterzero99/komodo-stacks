@@ -29,6 +29,7 @@ services:
       - database
     networks:
       - caddy
+      - default
     labels:
       caddy: lucisys.duckdns.org:2283
       caddy.reverse_proxy: "{{upstreams 2283}}"
