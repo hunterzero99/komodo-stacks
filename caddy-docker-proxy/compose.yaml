@@ -6,8 +6,6 @@ services:
       - 80:80
       - 443:443/tcp
       - 443:443/udp
-      - 25600:25600/tcp
-      - 25600:25600/udp
     environment:
       - CADDY_INGRESS_NETWORKS=caddy
     networks:
