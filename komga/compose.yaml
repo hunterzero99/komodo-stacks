@@ -16,7 +16,7 @@ services:
         target: /etc/timezone
         read_only: true
     ports:
-      - "25600:25600"
+      - "25601:25600"
     networks:
       - caddy
     labels:
