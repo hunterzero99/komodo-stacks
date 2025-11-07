@@ -7,7 +7,7 @@ services:
       - caddy
     labels:
       caddy: lucisys.duckdns.org:13377
-      caddy.reverse_proxy: "{{upstreams 13377}}"
+      caddy.reverse_proxy: "{{upstreams 80}}"
     volumes:
       - /mnt/data/Audiobooks:/mnt/Audiobooks
       - /mnt/data/Podcasts:/mnt/Podcasts
