@@ -23,7 +23,12 @@ services:
     env_file:
       - .env
     ports:
-      - '2283:2283'
+      - '2282:2283'
+    networks:
+      - caddy
+    labels:
+      caddy: lucisys.duckdns.org:2283
+      caddy.reverse_proxy: "{{upstreams 2283}}"
     depends_on:
       - redis
       - database
@@ -71,3 +76,7 @@ services:
 
 volumes:
   model-cache:
+
+networks:
+ caddy:
+   external: true
