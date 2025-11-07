@@ -2,7 +2,7 @@ services:
   audiobookshelf:
     image: ghcr.io/advplyr/audiobookshelf:latest
     ports:
-      - 13378:13377
+      - 13378:80
     networks:
       - caddy
     labels:
