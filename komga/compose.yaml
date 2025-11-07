@@ -15,12 +15,10 @@ services:
         source: /etc/timezone #alternatively you can use a TZ environment variable, like TZ=Europe/London
         target: /etc/timezone
         read_only: true
-    ports:
-      - 25601:25600
     networks:
       - caddy
     labels:
-      caddy: lucisys.duckdns.org
+      caddy: lucisys.duckdns.org:25600
       caddy.reverse_proxy: "{{upstreams 25600}}"
     user: "1000:1000"
     # remove the whole environment section if you don't need it
