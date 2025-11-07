@@ -22,8 +22,6 @@ services:
         lucisys.duckdns.org:25600
         192.168.1.13:25600
       caddy.reverse_proxy: "{{upstreams 25600}}"
-      caddy.tls.lucisys.duckdns.org: letsencrypt
-      caddy.tls.192.168.1.13: internal
     user: "1000:1000"
     # remove the whole environment section if you don't need it
     restart: unless-stopped
