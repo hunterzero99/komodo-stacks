@@ -2,7 +2,12 @@ services:
   audiobookshelf:
     image: ghcr.io/advplyr/audiobookshelf:latest
     ports:
-      - 13378:80
+      - 13378:13377
+    networks:
+      - caddy
+    labels:
+      caddy: lucisys.duckdns.org:13377
+      caddy.reverse_proxy: "{{upstreams 13377}}"
     volumes:
       - /mnt/data/Audiobooks:/mnt/Audiobooks
       - /mnt/data/Podcasts:/mnt/Podcasts
@@ -11,3 +16,7 @@ services:
     environment:
       - TZ=America/New_York
     restart: "unless-stopped" # no | always | on-failure | unless--stopped
+
+networks:
+  caddy:
+    external: true
