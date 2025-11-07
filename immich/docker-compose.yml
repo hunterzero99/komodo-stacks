@@ -30,7 +30,7 @@ services:
     networks:
       - caddy
     labels:
-      caddy: lucisys.duckdns.org/immich
+      caddy: immich.lucisys.duckdns.org
       caddy.reverse_proxy: "{{upstreams 2283}}"
     restart: always
     healthcheck:
