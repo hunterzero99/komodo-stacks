@@ -34,6 +34,10 @@ services:
     volumes:
       - ./usenetstreamer-config:/data/config
 
+networks:
+  default:
+    driver: bridge
+
 # Notes:
 # - Keep `ADDON_BASE_URL` secret-free; the addon automatically appends `/your-secret/` when serving manifests.
 # - All API keys, Easynews credentials, and direct Newznab endpoints can be entered later via the admin dashboard.
