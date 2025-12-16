@@ -6,7 +6,7 @@ services:
     ports:
       - "7000:7000"
     environment:
-      ADDON_SHARED_SECRET: 4018217228
+      ADDON_SHARED_SECRET: super-secret-token
       CONFIG_DIR: /data/config
     volumes:
       - ./usenetstreamer-config:/data/config
