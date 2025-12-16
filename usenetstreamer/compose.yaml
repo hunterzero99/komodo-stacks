@@ -1,12 +1,36 @@
 services:
+  nzbdav:
+    image: nzbdav/nzbdav:alpha
+    container_name: nzbdav
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ./nzbdav:/config
+
   usenetstreamer:
     image: ghcr.io/sanket9225/usenetstreamer:latest
     container_name: usenetstreamer
     restart: unless-stopped
+    depends_on:
+      - nzbdav
     ports:
       - "7000:7000"
     environment:
       ADDON_SHARED_SECRET: super-secret-token
+#      ADDON_BASE_URL: https://your-duckdns-subdomain.duckdns.org/
+      NZBDAV_URL: http://localhost:3000
+      NZBDAV_WEBDAV_URL: http://localhost:3000
       CONFIG_DIR: /data/config
     volumes:
       - ./usenetstreamer-config:/data/config
+
+# Notes:
+# - Keep `ADDON_BASE_URL` secret-free; the addon automatically appends `/your-secret/` when serving manifests.
+# - All API keys, Easynews credentials, and direct Newznab endpoints can be entered later via the admin dashboard.
+# - Want to keep Prowlarr/NZBHydra? Add another service block and set `INDEXER_MANAGER_URL`/`API_KEY` env vars.
+# - `CONFIG_DIR` tells UsenetStreamer to persist `runtime-env.json` under `/data/config`, which is the host bind mount you just created.
+
