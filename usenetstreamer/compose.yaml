@@ -35,8 +35,8 @@ services:
       - ./usenetstreamer-config:/data/config
 
 networks:
-  default:
-    driver: bridge
+  caddy:
+    external: true
 
 # Notes:
 # - Keep `ADDON_BASE_URL` secret-free; the addon automatically appends `/your-secret/` when serving manifests.
