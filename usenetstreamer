@@ -1,0 +1,12 @@
+services:
+  usenetstreamer:
+    image: ghcr.io/sanket9225/usenetstreamer:latest
+    container_name: usenetstreamer
+    restart: unless-stopped
+    ports:
+      - "7000:7000"
+    environment:
+      ADDON_SHARED_SECRET: 4018217228
+      CONFIG_DIR: /data/config
+    volumes:
+      - ./usenetstreamer-config:/data/config
