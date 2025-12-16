@@ -28,8 +28,8 @@ services:
     environment:
       ADDON_SHARED_SECRET: 
       ADDON_BASE_URL: https://usenetstreamer.lucisys.duckdns.org/
-      NZBDAV_URL: http://localhost:3000
-      NZBDAV_WEBDAV_URL: http://localhost:3000
+      NZBDAV_URL: http://nzbdav:3000
+      NZBDAV_WEBDAV_URL: http://nzbdav:3000
       CONFIG_DIR: /data/config
     volumes:
       - ./usenetstreamer-config:/data/config
