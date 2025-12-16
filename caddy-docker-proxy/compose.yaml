@@ -8,6 +8,8 @@ services:
       - 443:443/udp
       - 25600:25600
       - 13377:13377
+      # Usenetstreamer
+      - 7000:7000
     environment:
       - CADDY_INGRESS_NETWORKS=caddy
     networks:
