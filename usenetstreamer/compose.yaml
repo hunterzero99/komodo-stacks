@@ -18,16 +18,16 @@ services:
     depends_on:
       - nzbdav
     ports:
-      - "7000:80"
+      - "7000:7000"
     networks:
       - caddy
       - default
     labels:
-      caddy: lucisys.duckdns.org:7000
-      caddy.reverse_proxy: "{{upstreams 80}}"
+      caddy: usenetstreamer.lucisys.duckdns.org
+      caddy.reverse_proxy: "{{upstreams 7000}}"
     environment:
-      ADDON_SHARED_SECRET: super-secret-token
-      ADDON_BASE_URL: https://lucisys.duckdns.org:7000/
+      ADDON_SHARED_SECRET: 
+      ADDON_BASE_URL: https://usenetstreamer.lucisys.duckdns.org/
       NZBDAV_URL: http://localhost:3000
       NZBDAV_WEBDAV_URL: http://localhost:3000
       CONFIG_DIR: /data/config
