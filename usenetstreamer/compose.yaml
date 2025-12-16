@@ -23,11 +23,11 @@ services:
       - caddy
       - default
     labels:
-      caddy: lucisys.duckdns.org:7000
+      caddy: lucisys.duckdns.org:7001
       caddy.reverse_proxy: "{{upstreams 7000}}"
     environment:
       ADDON_SHARED_SECRET: 
-      ADDON_BASE_URL: https://lucisys.duckdns.org:7000
+      ADDON_BASE_URL: https://lucisys.duckdns.org:7001
       NZBDAV_URL: http://nzbdav:3000
       NZBDAV_WEBDAV_URL: http://nzbdav:3000
       CONFIG_DIR: /data/config
