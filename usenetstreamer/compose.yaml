@@ -21,7 +21,7 @@ services:
       - "7000:7000"
     environment:
       ADDON_SHARED_SECRET: super-secret-token
-#      ADDON_BASE_URL: https://your-duckdns-subdomain.duckdns.org/
+      ADDON_BASE_URL: https://lucisys.duckdns.org:7000/
       NZBDAV_URL: http://localhost:3000
       NZBDAV_WEBDAV_URL: http://localhost:3000
       CONFIG_DIR: /data/config
