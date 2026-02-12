@@ -19,9 +19,9 @@ services:
       - CACHE_DRIVER=database
       - SESSION_DRIVER=database
       - QUEUE_DRIVER=sync
-    volumes:
-      /mnt/data/Docker/Monica:/var/www/html/storage
-      restart: always
+  volumes:
+    - /mnt/data/Docker/Monica:/var/www/html/storage
+    restart: always
 
   db:
     image: mariadb:11
