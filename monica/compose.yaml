@@ -20,7 +20,7 @@ services:
       - SESSION_DRIVER=database
       - QUEUE_DRIVER=sync
     volumes:
-      - /mnt/data/Docker/Monica:/var/www/html/storage
+      /mnt/data/Docker/Monica:/var/www/html/storage
       restart: always
 
   db:
