@@ -59,7 +59,7 @@ pages:
       - size: small
         widgets:
           - type: weather
-            location: PPLA
+            location: Providence, United States
             units: imperial # alternatively "metric"
             hour-format: 12h # alternatively "24h"
             # Optionally hide the location from being displayed in the widget
