@@ -59,7 +59,7 @@ pages:
       - size: small
         widgets:
           - type: weather
-            location: Lincoln, Rhode Island, United States
+            location: 41.89276, -71.41017
             units: imperial # alternatively "metric"
             hour-format: 12h # alternatively "24h"
             # Optionally hide the location from being displayed in the widget
