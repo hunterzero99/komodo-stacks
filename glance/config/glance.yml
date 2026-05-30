@@ -67,12 +67,12 @@ pages:
 
           - type: markets
             markets:
-              - symbol: SPY
-                name: S&P 500
-              - symbol: BTC-USD
-                name: Bitcoin
-              - symbol: NVDA
-                name: NVIDIA
+              - symbol: FDEWX
+                name: Fidelity 2055 Index Fund 
+              - symbol: FTIHX
+                name: Fidelity International Index Fund
+              - symbol: SPAXX
+                name: Fidelity Money Market Fund
               - symbol: AAPL
                 name: Apple
               - symbol: MSFT
