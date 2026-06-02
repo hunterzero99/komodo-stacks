@@ -9,7 +9,7 @@ services:
       - 25600:25600
       - 13377:13377
       - 7001:7001
-      - 13378:13378
+      - 8080:13378
 
     environment:
       - CADDY_INGRESS_NETWORKS=caddy
