@@ -10,5 +10,5 @@ services:
     networks:
       - caddy
     labels:
-      caddy: lucisys.duckdns.org:13378
+      caddy: glance.vpnluci.duckdns.org
       caddy.reverse_proxy: "{{upstreams 8080}}"
