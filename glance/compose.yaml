@@ -7,3 +7,8 @@ services:
       - ./config:/app/config
     ports:
       - 8080:8080
+    networks:
+      - caddy
+    labels:
+      caddy: lucisys.duckdns.org:13378
+      caddy.reverse_proxy: "{{upstreams 8080}}"
