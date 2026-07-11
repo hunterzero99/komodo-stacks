@@ -13,7 +13,7 @@ services:
         PGID: ${PGID:-10001}
     restart: unless-stopped
     ports:
-      - "4000:4000"
+      - "3000:3000"
     environment:
       # Node environment
       NODE_ENV: production
@@ -27,14 +27,14 @@ services:
       CADDY_API_URL: ${CADDY_API_URL:-http://caddy:2019}
 
       # Public base URL for the application
-      BASE_URL: ${BASE_URL:-http://localhost:4000}
+      BASE_URL: ${BASE_URL:-http://localhost:3000}
 
       # Database configuration
       DATABASE_PATH: /app/data/caddy-proxy-manager.db
       DATABASE_URL: file:/app/data/caddy-proxy-manager.db
 
       # NextAuth configuration
-      NEXTAUTH_URL: ${BASE_URL:-http://localhost:4000}
+      NEXTAUTH_URL: ${BASE_URL:-http://localhost:3000}
 
       # REQUIRED: Admin credentials for login
       # SECURITY: You MUST set these to secure values in production!
