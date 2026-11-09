@@ -79,6 +79,7 @@
           # token: ...
           repositories:
             - glanceapp/glance
-            - go-gitea/gitea
             - immich-app/immich
-            - syncthing/syncthing
+            - advplyr/audiobookshelf
+            - alam00000/bentopdf
+            - homebridge/homebridge
