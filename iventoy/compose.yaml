@@ -1,0 +1,12 @@
+services:
+  iventoy:
+    image: ziggyds/iventoy:latest
+    container_name: iventoy
+    network_mode: host
+    privileged: true
+    restart: unless-stopped
+    volumes:
+      - ./iso:/app/iso
+      - ./config:/app/config
+      - ./data:/app/data
+      - ./log:/app/log
