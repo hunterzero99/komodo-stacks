@@ -6,7 +6,4 @@ services:
     privileged: true
     restart: unless-stopped
     volumes:
-      - ./iso:/app/iso
-      - ./config:/app/config
       - ./data:/app/data
-      - ./log:/app/log
